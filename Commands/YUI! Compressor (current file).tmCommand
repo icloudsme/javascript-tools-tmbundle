@@ -15,8 +15,17 @@ fi
 if [[ ${TM_JST_YSEMI} == 'false' ]]; then
   TM_JST_YSEMI=('');
 fi
+if [[ ${TM_JST_YLNBK} != '' ]]; then
+  TM_JST_yx1=(' --line-break ');
+fi
+if [[ ${TM_JST_YMUNG} == 'false' ]]; then
+  TM_JST_YMUNG=(' --nomunge');
+fi
+if [[ ${TM_JST_YOPTI} == 'false' ]]; then
+  TM_JST_YOPTI=(' --disable-optimizations');
+fi
 cat &gt;'/tmp/compress_this_file.js';
-java -jar "$TM_BUNDLE_SUPPORT/bin/yuicompressor.jar" --charset ${TM_JST_YCHAR}${TM_JST_YSEMI} '/tmp/compress_this_file.js' -o '/tmp/compress_this_file.js';
+java -jar "$TM_BUNDLE_SUPPORT/bin/yuicompressor.jar" --charset ${TM_JST_YCHAR}${TM_JST_YSEMI}${TM_JST_yx1}${TM_JST_YLNBK}${TM_JST_YMUNG}${TM_JST_YOPTI} '/tmp/compress_this_file.js' -o '/tmp/compress_this_file.js';
 cat /tmp/compress_this_file.js;</string>
 	<key>input</key>
 	<string>document</string>
