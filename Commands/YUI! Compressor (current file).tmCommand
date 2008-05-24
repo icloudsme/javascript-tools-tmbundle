@@ -7,13 +7,13 @@
 	<key>command</key>
 	<string>#!/bin/bash
 if [[ ${TM_JST_YCHAR} == '' ]]; then
-  TM_JST_YCHAR=(utf8);
+  TM_JST_YCHAR=('utf8');
 fi
 if [[ ${TM_JST_YSEMI} != 'false' ]]; then
-  TM_JST_YSEMI=( --preserve-semi);
+  TM_JST_YSEMI=(' --preserve-semi');
 fi
 if [[ ${TM_JST_YSEMI} == 'false' ]]; then
-  TM_JST_YSEMI=();
+  TM_JST_YSEMI=('');
 fi
 cat &gt;'/tmp/compress_this_file.js';
 java -jar "$TM_BUNDLE_SUPPORT/bin/yuicompressor.jar" --charset ${TM_JST_YCHAR}${TM_JST_YSEMI} '/tmp/compress_this_file.js' -o '/tmp/compress_this_file.js';
