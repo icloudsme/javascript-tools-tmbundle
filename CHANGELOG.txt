@@ -1,5 +1,8 @@
 JavaScript Tools TextMate Bundle
 --------------------------------
+v0.2.7 (Fri May 23 20:50:31 MDT 2008) -- john muhl
++ Add environment variables for YUI! compressor options, character set and preserve semi-colons
+
 v0.2.6 (Sat May 17 20:14:50 EDT 2008) -- Thomas Aylott
 + Now you can just set and environment variable to toggle the Packr base62 option
 

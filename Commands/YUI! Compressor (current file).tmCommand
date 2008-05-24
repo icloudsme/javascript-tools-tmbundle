@@ -5,8 +5,18 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>cat &gt;'/tmp/compress_this_file.js';
-java -jar "$TM_BUNDLE_SUPPORT/bin/yuicompressor.jar" --charset utf8 --preserve-semi '/tmp/compress_this_file.js' -o '/tmp/compress_this_file.js';
+	<string>#!/bin/bash
+if [[ ${TM_JST_YCHAR} == '' ]]; then
+  TM_JST_YCHAR=(utf8);
+fi
+if [[ ${TM_JST_YSEMI} != 'false' ]]; then
+  TM_JST_YSEMI=( --preserve-semi);
+fi
+if [[ ${TM_JST_YSEMI} == 'false' ]]; then
+  TM_JST_YSEMI=();
+fi
+cat &gt;'/tmp/compress_this_file.js';
+echo "java -jar '$TM_BUNDLE_SUPPORT/bin/yuicompressor.jar' --charset ${TM_JST_YCHAR}${TM_JST_YSEMI} '/tmp/compress_this_file.js' -o '/tmp/compress_this_file.js'";
 cat /tmp/compress_this_file.js;</string>
 	<key>input</key>
 	<string>document</string>
