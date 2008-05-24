@@ -1,5 +1,8 @@
 JavaScript Tools TextMate Bundle
 --------------------------------
+v0.2.8 (Sat May 24 10:07:07 MDT 2008) -- john muhl
++ Add environment variables for YUI! compressor options, --line-break, --nomunge and --disable-optimizations
+
 v0.2.7 (Fri May 23 20:50:31 MDT 2008) -- john muhl
 + Add environment variables for YUI! compressor options, character set and preserve semi-colons
 
