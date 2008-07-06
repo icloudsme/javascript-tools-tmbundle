@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 FILENAME = ENV['TM_FILENAME']
 FILEPATH = ENV['TM_FILEPATH']
-# SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
-SUPPORT  = '/Users/taylott/Library/Application Support/TextMate/Bundles/JavaScript Tools.tmbundle/Support'
+SUPPORT  = ENV['TM_BUNDLE_SUPPORT']
 BINARY   = "#{SUPPORT}/bin/jsl"
 # BINARY   = `uname -a` =~ /i386/ ? "#{SUPPORT}/bin/intel/jsl" : "#{SUPPORT}/bin/ppc/jsl"
 
